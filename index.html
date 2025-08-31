@@ -20,6 +20,7 @@ body {
 .card {
   position: relative;
   width: 320px;
+  max-width: 90%;
   height: 450px;
   perspective: 1200px;
   cursor: pointer;
@@ -69,7 +70,7 @@ body {
 
 .card-back .background-img {
   position: absolute;
-  bottom: 1px; 
+  bottom: -20px; 
   left: 50%;
   transform: translateX(-50%);
   width: 150px;  
@@ -198,7 +199,7 @@ body {
 <body>
 
 <!-- الصوت -->
-<audio id="razan birthday" src="C:\Users\basma\Desktop\razan birthday\the city holds my heart.mp3"loop></audio>
+<audio id="razan birthday" src= "C:\Users\basma\Desktop\razan birthday\the city holds my heart.mp3"loop autoplay></audio>
 
 <div class="card" id="card">
   <div class="card-inner">
@@ -222,37 +223,15 @@ body {
     <div class="card-back">
       <img src="namjoon.png" class="background-img" alt="Birthday Photo">
       <div class="text-container">
-<p></p>
-        <b>
-          إلى عزيزتي رين:
-
-        </b>
-
-        <p>
-
-إلى الصور التي قمتُ بإنزالها،
-إلى الأغنية التي جمعتنا،
-إلى الفرقة التي نحبها،
-إلى فتاة الزعيم..
-</p>
-<p>إلـيكِ.</p>
-
-
-        <p>
-كل عام وأنتِ سعيدة و مُحاطة بالنجوم المُحبة،
-ولتكن أعوامك رقيقة مثلك مليئة بأشخاص مُحبين وداعمين كقلبك وأن تصلي إلى أحلامك ولو بعد حين.
-
-أحبك دومًا وأدعمك دومًا ❤</p>
-
-    
-
-        <b>
-مُحبتك: باسيڤي
-
-        </b>
-
+        <p></p>
+        <b>إلى عزيزتي رين:</b>
+        <p>إلى الصور التي قمتُ بإنزالها، إلى الأغنية التي جمعتنا، إلى الفرقة التي نحبها، إلى فتاة الزعيم..</p>
+        <p>إلـيكِ.</p>
+        <p>كل عام وأنتِ سعيدة و مُحاطة بالنجوم المُحبة، ولتكن أعوامك رقيقة مثلك مليئة بأشخاص مُحبين وداعمين كقلبك وأن تصلي إلى أحلامك ولو بعد حين.</p>
+        <p>أحبك دومًا وأدعمك دومًا ❤</p>
+        <b>مُحبتك: باسيڤي</b>
       </div>
-        </div>
+    </div>
   </div>
 </div>
 
@@ -263,7 +242,7 @@ const audio = document.getElementById('razan birthday');
 card.addEventListener('click', () => {
   card.classList.toggle('open');
   if(audio.paused){
-    audio.play().catch(err => console.log('الصوت لم يُشغل تلقائياً:', err));
+    audio.play().catch(err => console.log('المتصفح منع التشغيل:', err));
   }
 });
 
