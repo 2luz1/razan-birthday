@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>razan Birthday</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card.open .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #73BFB5;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: inset 10px 0px 15px 0 rgba(0,0,0,0.1);
+}
+
+.card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+  background-color: rgb(230, 240, 230);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  background-color: rgb(230, 240, 230);
+}
+
+.card-back .background-img {
+  position: absolute;
+  bottom: 1px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;  
+  height: auto;
+  z-index: 1;
+  opacity: 0.7; 
+}
+
+.card-back .text-container {
+  position: relative;
+  z-index: 2; 
+  padding: 0 15px;
+  text-align: center;
+}
+
+.text-container #head {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #bf737d;
+  letter-spacing: 1px;
+  margin: 10px 0 20px 0;
+}
+
+.cake-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  margin-top: 20px; 
+}
+
+.cake {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #551340;
+  position: absolute;
+}
+
+.layer-top { top: 0; }
+.layer-middle { top: 25px; }
+.layer-bottom { top: 50px; }
+
+.icing {
+  position: absolute;
+  width: 90%;
+  height: 20px;
+  top: 0;
+  left: 5%;
+  background-color: #f0e4d0;
+  border-radius: 50%;
+}
+
+.candle {
+  position: absolute;
+  width: 12px;
+  height: 45px;
+  top: -45px;
+  left: 50%;
+  margin-left: -6px;
+  background-color: #bf737d;
+  border-radius: 5px;
+}
+
+.flame {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  margin-left: -7px;
+  width: 14px;
+  height: 22px;
+  background-color: orange;
+  border-radius: 50% 50% 50% 50% / 100% 100% 50% 50%;
+  animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+  0%,50%,100% { opacity: 1; transform: scale(1); }
+  25%,75% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.text-below-cake {
+  font-size: 1em;
+  color: #ae6486;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.confetti {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: -20px;
+  animation: fall linear infinite;
+}
+
+.confetti:before, .confetti:after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+.confetti:before { transform: rotate(-45deg); left: 0; top: -6px; }
+.confetti:after { transform: rotate(45deg); left: 0; top: -6px; }
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(700px) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- الصوت -->
+<audio id="razan birthday" src="C:\Users\basma\Desktop\razan birthday\the city holds my heart.mp3"loop></audio>
+
+<div class="card" id="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="text-container">
+        <p id="head">Happy Birthday Razan</p>
+      </div>
+      <div class="cake-container">
+        <div class="cake">
+          <div class="layer layer-bottom"></div>
+          <div class="layer layer-middle"></div>
+          <div class="layer layer-top"></div>
+          <div class="icing"></div>
+          <div class="candle"><div class="flame"></div></div>
+        </div>
+      </div>
+      <div class="text-below-cake">
+        <p>Please turn the card to the other side.</p>
+      </div>
+    </div>
+    <div class="card-back">
+      <img src="namjoon.png" class="background-img" alt="Birthday Photo">
+      <div class="text-container">
+<p></p>
+        <b>
+          إلى عزيزتي رين:
+
+        </b>
+
+        <p>
+
+إلى الصور التي قمتُ بإنزالها،
+إلى الأغنية التي جمعتنا،
+إلى الفرقة التي نحبها،
+إلى فتاة الزعيم..
+</p>
+<p>إلـيكِ.</p>
+
+
+        <p>
+كل عام وأنتِ سعيدة و مُحاطة بالنجوم المُحبة،
+ولتكن أعوامك رقيقة مثلك مليئة بأشخاص مُحبين وداعمين كقلبك وأن تصلي إلى أحلامك ولو بعد حين.
+
+أحبك دومًا وأدعمك دومًا ❤</p>
+
+    
+
+        <b>
+مُحبتك: باسيڤي
+
+        </b>
+
+      </div>
+        </div>
+  </div>
+</div>
+
+<script>
+const card = document.getElementById('card');
+const audio = document.getElementById('razan birthday');
+
+card.addEventListener('click', () => {
+  card.classList.toggle('open');
+  if(audio.paused){
+    audio.play().catch(err => console.log('الصوت لم يُشغل تلقائياً:', err));
+  }
+});
+
+// الخلفية الطائرة (قلوب أو قصاصات)
+const container = document.body;
+function createConfetti() {
+  const el = document.createElement('div');
+  el.classList.add('confetti');
+  el.style.left = Math.random() * window.innerWidth + 'px';
+  const size = 12 + Math.random()*12;
+  el.style.width = size + 'px';
+  el.style.height = size + 'px';
+  const colors = ['#ff4d6d','#f0e4d0','#ffb347','#bf737d','#f7a1a1'];
+  el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  el.style.animationDuration = 4 + Math.random()*4 + 's';
+  container.appendChild(el);
+  setTimeout(() => el.remove(), 10000);
+}
+setInterval(createConfetti, 200);
+</script>
+
+</body>
+</html>
